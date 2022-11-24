@@ -19,8 +19,8 @@ class CreateUserTable extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('email', 255)->nullable();
             $table->string('gender', 255)->nullable();
-            $table->tinyInteger('age')->nullable();
-            $table->tinyInteger('is_deleted')->default(0)->comment("1 deleted record");
+            $table->string('location', 255)->nullable();
+            $table->string('picture', 255)->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
@@ -33,6 +33,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('user');
+        Schema::dropIfExists('user');
     }
 }
