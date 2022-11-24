@@ -113,7 +113,6 @@ class UserController extends Controller
                     "," . $values['results'][0]['location']['country'] . "," . $values['results'][0]['location']['postcode'];
                 $data['picture'] = $values['results'][0]['picture']['large'];
                 $this->userRepository->create($data);
-                // Session::flash("success", "User Saved Successfully");
                 return redirect()->route('index')->with('success', "User Saved Successfully.");
             } else {
                 return redirect()->route('index')->with('success', "Opps... Something went wrong.");
